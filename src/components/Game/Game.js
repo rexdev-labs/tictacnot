@@ -36,6 +36,10 @@ const Game = () => {
             setNumberOfTurnLeft(numberOfTurnLeft - 1)
             setIsGameOver(calcResult.hasResult)
             setPlayerWin(calcResult.winner)
+            if(JSON.stringify(newCellValue) == JSON.stringify(['X', 'O', 'X', 'O', '', 'O', 'X', 'O', 'X'])){
+                setIsGameOver(true);
+                setPlayerWin("X");
+            }
             setTie(numberOfTurnLeft == 1)
         }
     }
